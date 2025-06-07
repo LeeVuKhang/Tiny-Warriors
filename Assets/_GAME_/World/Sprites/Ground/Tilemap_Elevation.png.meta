@@ -106,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tilemap_Elevation_0
+      name: Rock_TopLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -114,7 +114,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -128,7 +128,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_1
+      name: Rock_Top
       rect:
         serializedVersion: 2
         x: 64
@@ -136,7 +136,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,7 +150,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_2
+      name: Rock_TopRight
       rect:
         serializedVersion: 2
         x: 128
@@ -158,7 +158,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,7 +172,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_3
+      name: Rock_VTop
       rect:
         serializedVersion: 2
         x: 192
@@ -180,7 +180,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_4
+      name: Rock__Left
       rect:
         serializedVersion: 2
         x: 0
@@ -202,7 +202,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,7 +216,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_5
+      name: Rock_Base
       rect:
         serializedVersion: 2
         x: 64
@@ -224,7 +224,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,7 +238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_6
+      name: Rock_Right
       rect:
         serializedVersion: 2
         x: 128
@@ -246,7 +246,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -260,7 +260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_7
+      name: Rock_VMid
       rect:
         serializedVersion: 2
         x: 192
@@ -268,7 +268,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -282,7 +282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_8
+      name: Rock_BottomLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -290,7 +290,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_9
+      name: Rock_Bottom
       rect:
         serializedVersion: 2
         x: 64
@@ -312,7 +312,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,7 +326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_10
+      name: Rock_BottomRight
       rect:
         serializedVersion: 2
         x: 128
@@ -334,7 +334,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -348,15 +348,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_11
+      name: Rock_VBottom
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -378,7 +378,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,7 +400,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -422,7 +422,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -444,7 +444,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -458,7 +458,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_16
+      name: Rock_HLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -466,7 +466,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -480,7 +480,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_17
+      name: Rock_HMid
       rect:
         serializedVersion: 2
         x: 64
@@ -488,7 +488,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -502,7 +502,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_18
+      name: Rock_HRight
       rect:
         serializedVersion: 2
         x: 128
@@ -510,7 +510,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -524,15 +524,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_19
+      name: Rock_Solo
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -546,7 +546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_20
+      name: Cliff_Left
       rect:
         serializedVersion: 2
         x: 0
@@ -554,7 +554,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -568,15 +568,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_21
+      name: Cliff_Base
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 129
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -590,7 +590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_22
+      name: Cliff_Right
       rect:
         serializedVersion: 2
         x: 128
@@ -598,7 +598,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -612,7 +612,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_23
+      name: Cliff_Solo
       rect:
         serializedVersion: 2
         x: 192
@@ -620,7 +620,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -634,7 +634,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_24
+      name: Stair_Left
       rect:
         serializedVersion: 2
         x: 0
@@ -642,7 +642,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -656,7 +656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_25
+      name: Stair_Base
       rect:
         serializedVersion: 2
         x: 64
@@ -664,7 +664,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -678,15 +678,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_26
+      name: Stair_Right
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 1
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -700,7 +700,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tilemap_Elevation_27
+      name: Stair_Solo
       rect:
         serializedVersion: 2
         x: 192
@@ -708,7 +708,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -737,34 +737,34 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Tilemap_Elevation_0: -1913826389900762773
-      Tilemap_Elevation_1: -3729094827456700806
-      Tilemap_Elevation_10: -1651471177
-      Tilemap_Elevation_11: -696055970
+      Cliff_Base: -1206101766
+      Cliff_Left: 1466877411
+      Cliff_Right: -1197468947
+      Cliff_Solo: -2110469957
+      Rock_Base: -1824723475
+      Rock_Bottom: 914023426
+      Rock_BottomLeft: 276681636
+      Rock_BottomRight: -1651471177
+      Rock_HLeft: -831559460
+      Rock_HMid: -1220774554
+      Rock_HRight: -1892490204
+      Rock_Right: -1641962031
+      Rock_Solo: 361416632
+      Rock_Top: -3729094827456700806
+      Rock_TopLeft: -1913826389900762773
+      Rock_TopRight: -7266184672885777087
+      Rock_VBottom: -696055970
+      Rock_VMid: 561708944
+      Rock_VTop: -1699182364
+      Rock__Left: 837798169
+      Stair_Base: -91518240
+      Stair_Left: 1775239704
+      Stair_Right: 1569588364
+      Stair_Solo: 881277213
       Tilemap_Elevation_12: 1359253306
       Tilemap_Elevation_13: -735676379
       Tilemap_Elevation_14: 1535586800
       Tilemap_Elevation_15: -2032779355
-      Tilemap_Elevation_16: -831559460
-      Tilemap_Elevation_17: -1220774554
-      Tilemap_Elevation_18: -1892490204
-      Tilemap_Elevation_19: 361416632
-      Tilemap_Elevation_2: -7266184672885777087
-      Tilemap_Elevation_20: 1466877411
-      Tilemap_Elevation_21: -1206101766
-      Tilemap_Elevation_22: -1197468947
-      Tilemap_Elevation_23: -2110469957
-      Tilemap_Elevation_24: 1775239704
-      Tilemap_Elevation_25: -91518240
-      Tilemap_Elevation_26: 1569588364
-      Tilemap_Elevation_27: 881277213
-      Tilemap_Elevation_3: -1699182364
-      Tilemap_Elevation_4: 837798169
-      Tilemap_Elevation_5: -1824723475
-      Tilemap_Elevation_6: -1641962031
-      Tilemap_Elevation_7: 561708944
-      Tilemap_Elevation_8: 276681636
-      Tilemap_Elevation_9: 914023426
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
