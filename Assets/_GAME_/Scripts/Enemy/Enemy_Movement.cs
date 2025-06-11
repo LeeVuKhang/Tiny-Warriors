@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class Enemy_Movement : MonoBehaviour
 {
-    public int speed = 2;
+    public float speed = 2;
+    public float attackRange = 2;
+    public float attackCooldown = 2;
+    public float attackCooldownTimer;
+    public float playerDetectRange = 5;
+    public Transform detectionPoint;
+    public LayerMask playerLayer;
     public Transform player;
     public EnemyState state;
+
 
     private Rigidbody2D rb;
     private int facingDirection = 1;
@@ -19,37 +26,56 @@ public class Enemy_Movement : MonoBehaviour
 
     void Update()
     {
-        if (state == EnemyState.Chasing && player != null)
+        CheckForPlayer();
+        if (attackCooldownTimer > 0)
         {
-            if ((player.position.x > transform.position.x && facingDirection == -1) ||
-                (player.position.x < transform.position.x && facingDirection == 1))
+            attackCooldownTimer -= Time.deltaTime;
+        }
+        if (state == EnemyState.Chasing)
+        {
+            Chase();
+        }
+        else if (state == EnemyState.Attacking) 
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    private void CheckForPlayer() 
+    {
+        Collider2D[] inRange = Physics2D.OverlapCircleAll(detectionPoint.position, playerDetectRange, playerLayer);
+        if (inRange.Length > 0) {
+            player = inRange[0].transform;
+            //In attackRange then change state to attack
+            if (Mathf.Abs(Vector2.Distance(transform.position, player.position)) <= attackRange && attackCooldownTimer <= 0)
             {
-                Flip();
+                attackCooldownTimer = attackCooldown;
+                ChangeState(EnemyState.Attacking);
             }
-
-            Vector2 direction = (player.position - transform.position).normalized;
-            rb.linearVelocity = direction * speed;
+            //else > attack range
+            else if (Mathf.Abs(Vector2.Distance(transform.position, player.position)) > attackRange && state != EnemyState.Attacking)
+            {
+                ChangeState(EnemyState.Chasing);
+            }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            player = collision.transform;
-            ChangeState(EnemyState.Chasing);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        else
         {
             rb.linearVelocity = Vector2.zero;
             ChangeState(EnemyState.Idle);
         }
     }
 
+    private void Chase()
+    {
+        if ((player.position.x > transform.position.x && facingDirection == -1) ||
+                (player.position.x < transform.position.x && facingDirection == 1))
+        {
+            Flip();
+        }
+
+        Vector2 direction = (player.position - transform.position).normalized;
+        rb.linearVelocity = direction * speed;
+    } 
     private void Flip()
     {
         facingDirection *= -1;
@@ -67,6 +93,8 @@ public class Enemy_Movement : MonoBehaviour
             anim.SetBool("isIdle", false);
         else if (state == EnemyState.Chasing)
             anim.SetBool("isChasing", false);
+        else if (state == EnemyState.Attacking)
+            anim.SetBool("isAttacking", false);
 
         // Update state
         state = newState;
@@ -76,11 +104,19 @@ public class Enemy_Movement : MonoBehaviour
             anim.SetBool("isIdle", true);
         else if (state == EnemyState.Chasing)
             anim.SetBool("isChasing", true);
+        else if (state == EnemyState.Attacking)
+            anim.SetBool("isAttacking", true);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(detectionPoint.position, playerDetectRange);
     }
 }
 
 public enum EnemyState
 {
     Idle,
-    Chasing
+    Chasing,
+    Attacking
 }

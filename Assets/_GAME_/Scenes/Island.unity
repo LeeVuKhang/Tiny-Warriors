@@ -1640,7 +1640,7 @@ Tilemap:
       - {fileID: 1258035416, guid: 4b7d38efcfb80b94682ef2dbd003406d, type: 3}
       - {fileID: 447679739, guid: 4b7d38efcfb80b94682ef2dbd003406d, type: 3}
       - {fileID: 1482025036, guid: 4b7d38efcfb80b94682ef2dbd003406d, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 0, y: -32, z: 0}
@@ -1730,7 +1730,7 @@ Tilemap:
       - {fileID: 1630503292, guid: da9349a303c040441bd9390d38095bf9, type: 3}
       - {fileID: 1415960824, guid: da9349a303c040441bd9390d38095bf9, type: 3}
       - {fileID: -1847872712, guid: da9349a303c040441bd9390d38095bf9, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: -30, z: 0}
@@ -1745,7 +1745,7 @@ Tilemap:
       - {fileID: 1358842554, guid: da9349a303c040441bd9390d38095bf9, type: 3}
       - {fileID: -953685169, guid: da9349a303c040441bd9390d38095bf9, type: 3}
       - {fileID: 50288009, guid: da9349a303c040441bd9390d38095bf9, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -3, y: -29, z: 0}
@@ -1805,7 +1805,7 @@ Tilemap:
       - {fileID: 291525465, guid: 4b7d38efcfb80b94682ef2dbd003406d, type: 3}
       - {fileID: -1717599744, guid: 4b7d38efcfb80b94682ef2dbd003406d, type: 3}
       - {fileID: -1584182455, guid: 4b7d38efcfb80b94682ef2dbd003406d, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 10, y: -25, z: 0}
@@ -2323,7 +2323,7 @@ GameObject:
   - component: {fileID: 92346620}
   - component: {fileID: 92346625}
   - component: {fileID: 92346626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Warrior_Blue
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2514,8 +2514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7182c97aaa13b614fa0de067e3b75933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
-  maxHealth: 3
+  currentHealth: 10
+  maxHealth: 10
 --- !u!1 &151961202
 GameObject:
   m_ObjectHideFlags: 0
@@ -6569,6 +6569,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &476907436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476907437}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476907437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476907436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4050909, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 556197197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &518587047
 GameObject:
   m_ObjectHideFlags: 0
@@ -6931,7 +6962,6 @@ GameObject:
   - component: {fileID: 556197198}
   - component: {fileID: 556197199}
   - component: {fileID: 556197201}
-  - component: {fileID: 556197200}
   m_Layer: 0
   m_Name: Enemy_Torch
   m_TagString: Enemy
@@ -7070,7 +7100,9 @@ Transform:
   m_LocalPosition: {x: -3.555043, y: -25.342642, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 476907437}
+  - {fileID: 1021138635}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &556197198
@@ -7086,6 +7118,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDamage: 1
+  attackDamage: 2
+  attackPoint: {fileID: 476907437}
+  weaponRange: 1
+  knockbackForce: 7
+  stunTime: 0.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!95 &556197199
 Animator:
   serializedVersion: 7
@@ -7108,42 +7148,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &556197200
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556197193}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 2.7272725, y: 0}
-  m_Radius: 4.227273
 --- !u!114 &556197201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7157,6 +7161,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  attackRange: 1.2
+  attackCooldown: 1
+  attackCooldownTimer: 0
+  playerDetectRange: 4.5
+  detectionPoint: {fileID: 1021138635}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   player: {fileID: 92346624}
   state: 0
 --- !u!1 &568703205
@@ -36760,7 +36772,7 @@ Tilemap:
       - {fileID: 1866899520, guid: 9807320ab1f131547a7d5fe74316d3a4, type: 3}
       - {fileID: 222896324, guid: 9807320ab1f131547a7d5fe74316d3a4, type: 3}
       - {fileID: -679844877, guid: 9807320ab1f131547a7d5fe74316d3a4, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -7, y: -31, z: 0}
@@ -36970,7 +36982,7 @@ Tilemap:
       - {fileID: -825990478, guid: c09dda104d80a314685600315a855066, type: 3}
       - {fileID: 1540743475, guid: c09dda104d80a314685600315a855066, type: 3}
       - {fileID: 618972094, guid: c09dda104d80a314685600315a855066, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -13, y: -24, z: 0}
@@ -37120,7 +37132,7 @@ Tilemap:
       - {fileID: 1229731630, guid: c09dda104d80a314685600315a855066, type: 3}
       - {fileID: -570715468, guid: c09dda104d80a314685600315a855066, type: 3}
       - {fileID: -1851503807, guid: c09dda104d80a314685600315a855066, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: -15, z: 0}
@@ -39226,6 +39238,37 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &1021138634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1021138635}
+  m_Layer: 0
+  m_Name: DetectionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1021138635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021138634}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8181819, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 556197197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1055186184
 GameObject:
   m_ObjectHideFlags: 0
@@ -44008,7 +44051,7 @@ Tilemap:
       - {fileID: -4884028467403954897, guid: ac43420e107abc943b31d0376cf1dd13, type: 3}
       - {fileID: -1992740527, guid: ac43420e107abc943b31d0376cf1dd13, type: 3}
       - {fileID: -1615477791, guid: ac43420e107abc943b31d0376cf1dd13, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 0, y: -32, z: 0}
