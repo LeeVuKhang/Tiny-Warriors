@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy_Movement : MonoBehaviour
@@ -26,18 +27,21 @@ public class Enemy_Movement : MonoBehaviour
 
     void Update()
     {
-        CheckForPlayer();
-        if (attackCooldownTimer > 0)
+        if (state != EnemyState.Knockback)
         {
-            attackCooldownTimer -= Time.deltaTime;
-        }
-        if (state == EnemyState.Chasing)
-        {
-            Chase();
-        }
-        else if (state == EnemyState.Attacking) 
-        {
-            rb.linearVelocity = Vector2.zero;
+            CheckForPlayer();
+            if (attackCooldownTimer > 0)
+            {
+                attackCooldownTimer -= Time.deltaTime;
+            }
+            if (state == EnemyState.Chasing)
+            {
+                Chase();
+            }
+            else if (state == EnemyState.Attacking)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
         }
     }
 
@@ -107,16 +111,32 @@ public class Enemy_Movement : MonoBehaviour
         else if (state == EnemyState.Attacking)
             anim.SetBool("isAttacking", true);
     }
+
+    public void Knockback(Transform enemy, float force, float stunTime)
+    {
+        ChangeState(EnemyState.Knockback);
+        Vector2 direction = (transform.position - enemy.position).normalized;
+        rb.linearVelocity = direction * force;
+        StartCoroutine(KnockbackCounter(stunTime));
+    }
+    IEnumerator KnockbackCounter(float stunTime)
+    {
+        yield return new WaitForSeconds(stunTime);
+        rb.linearVelocity = Vector2.zero;
+        ChangeState(EnemyState.Idle);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(detectionPoint.position, playerDetectRange);
     }
+
 }
 
 public enum EnemyState
 {
     Idle,
     Chasing,
-    Attacking
+    Attacking,
+    Knockback
 }

@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player_Movement : MonoBehaviour
 {
     public float speed = 3;
     public Rigidbody2D rb;
     public int facingDirection = 1;
     public Animator anim;
+    public Player_Combat player_combat;
+    private void Update()
+    {
+        if (Input.GetButtonDown("Slash"))
+        {
+            player_combat.Attack();
+        }
 
+    }
     private bool isKnockback;
     private void FixedUpdate()
     {
