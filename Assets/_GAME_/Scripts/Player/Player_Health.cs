@@ -2,17 +2,15 @@ using UnityEngine;
 
 public class Player_Health : MonoBehaviour
 {
-    public int currentHealth;
-    public int maxHealth;
 
     public void ChangeHealth(int amount)
     {
-        currentHealth += amount;
-        if (currentHealth > maxHealth)
+        Stats_Manager.Instance.currentHealth += amount;
+        if (Stats_Manager.Instance.currentHealth > Stats_Manager.Instance.maxHealth)
         {
-            currentHealth = maxHealth;
+            Stats_Manager.Instance.currentHealth = Stats_Manager.Instance.maxHealth;
         }
-        if (currentHealth <=0) 
+        if (Stats_Manager.Instance.currentHealth <=0) 
         {
             gameObject.SetActive(false);
         }

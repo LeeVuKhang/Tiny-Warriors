@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public float speed = 3;
     public Rigidbody2D rb;
     public int facingDirection = 1;
     public Animator anim;
@@ -40,7 +39,7 @@ public class Player_Movement : MonoBehaviour
 
             Vector2 move = inputVector.magnitude > 0.1f ? inputVector.normalized : Vector2.zero;
 
-            rb.linearVelocity = move * speed;
+            rb.linearVelocity = move * Stats_Manager.Instance.speed;
         }
         
     }

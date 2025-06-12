@@ -5,13 +5,8 @@ using static Unity.Cinemachine.IInputAxisOwner.AxisDescriptor;
 public class Player_Combat : MonoBehaviour
 {
     public Animator anim;
-    public int attackDamage = 2;
-    public float attackCooldown = 1;
     public float attackCooldownTimer;
     public Transform attackPoint;
-    public float weaponRange;
-    public float knockbackForce;
-    public float stunTime;
     public LayerMask enemyLayer;
     private void Update()
     {
@@ -25,18 +20,18 @@ public class Player_Combat : MonoBehaviour
         if (attackCooldownTimer <= 0)
         {
             anim.SetBool("isAttacking", true);
-            attackCooldownTimer = attackCooldown;
+            attackCooldownTimer = Stats_Manager.Instance.attackCooldown;
         }
     }
 
     public void DealDamage()
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, enemyLayer);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, Stats_Manager.Instance.weaponRange, enemyLayer);
 
         if (enemies.Length > 0)
         {
-            enemies[0].GetComponent<Enemy_Health>().ChangeHealth(-attackDamage);
-            enemies[0].GetComponent<Enemy_Movement>().Knockback(transform, knockbackForce, stunTime);
+            enemies[0].GetComponent<Enemy_Health>().ChangeHealth(-Stats_Manager.Instance.attackDamage);
+            enemies[0].GetComponent<Enemy_Movement>().Knockback(transform, Stats_Manager.Instance.knockbackForce, Stats_Manager.Instance.stunTime);
 
         }
     }
@@ -48,6 +43,6 @@ public class Player_Combat : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, weaponRange);
+        Gizmos.DrawWireSphere(attackPoint.position, Stats_Manager.Instance.weaponRange);
     }
 }
